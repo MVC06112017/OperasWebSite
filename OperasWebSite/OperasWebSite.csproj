@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\OperasController.cs" />
+    <Compile Include="Controllers\OperaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -112,11 +112,9 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Operas\Create.cshtml" />
-    <Content Include="Views\Operas\Delete.cshtml" />
-    <Content Include="Views\Operas\Details.cshtml" />
-    <Content Include="Views\Operas\Edit.cshtml" />
-    <Content Include="Views\Operas\Index.cshtml" />
+    <Content Include="Views\Opera\Index.cshtml" />
+    <Content Include="Views\Opera\Details.cshtml" />
+    <Content Include="Views\Opera\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
