@@ -8,10 +8,18 @@ namespace OperasWebSite.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        //
+        // GET: /Home/
+
         public ActionResult Index()
         {
             return View("Index");
         }
+
+        public ActionResult About()
+        {
+            return View("");
+        }
+
     }
 }

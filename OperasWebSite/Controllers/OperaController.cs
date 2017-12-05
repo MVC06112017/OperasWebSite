@@ -10,47 +10,44 @@ namespace OperasWebSite.Controllers
 {
     public class OperaController : Controller
     {
+        private OperaDB contextDB = new OperaDB();
 
-        private OperaDB _operaDb = new OperaDB(); 
+        //
+        // GET: /Opera/
 
-        // GET: Opera
         public ActionResult Index()
         {
-            return View( "Index", _operaDb.Operas.ToList() );
+            return View("Index", contextDB.Operas.ToList());
         }
 
         public ActionResult Details(int id)
         {
-            Opera opera = _operaDb.Operas.Find(id);
-            if(opera == null )
+            Opera opera = contextDB.Operas.Find(id);
+            if (opera != null)
+            {
+                return View("Details", opera);
+            }
+            else
             {
                 return HttpNotFound();
             }
-
-            return View("Details", opera);
         }
 
         public ActionResult DetailsByTitle(string title)
         {
-            title = title.Replace('_', ' ');
-
-            Opera opera = (Opera) (from o in _operaDb.Operas
-                where o.Title == title
-                select o).FirstOrDefault();
-
+            Opera opera = (Opera)(from o in contextDB.Operas
+                                  where o.Title == title
+                                  select o).FirstOrDefault();
             if (opera == null)
             {
                 return HttpNotFound();
             }
-
             return View("Details", opera);
         }
 
-        [HttpGet]
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
-
             return View("Create", newOpera);
         }
 
@@ -59,12 +56,14 @@ namespace OperasWebSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                _operaDb.Operas.Add(newOpera);
-                _operaDb.SaveChanges();
+                contextDB.Operas.Add(newOpera);
+                contextDB.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View("Create", newOpera);
+            else
+            {
+                return View("Create", newOpera);
+            }
         }
     }
 }
