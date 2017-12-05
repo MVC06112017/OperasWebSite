@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Styles/SiteStyles.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    Menu: @Html.MvcSiteMap().Menu(false, false, true)
+    Breadcrumb: @Html.MvcSiteMap().SiteMapPath()
+
+    @RenderBody()
+</div>
+</body>
+</html>

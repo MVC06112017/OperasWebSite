@@ -30,6 +30,22 @@ namespace OperasWebSite.Controllers
             return View("Details", opera);
         }
 
+        public ActionResult DetailsByTitle(string title)
+        {
+            title = title.Replace('_', ' ');
+
+            Opera opera = (Opera) (from o in _operaDb.Operas
+                where o.Title == title
+                select o).FirstOrDefault();
+
+            if (opera == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("Details", opera);
+        }
+
         [HttpGet]
         public ActionResult Create()
         {

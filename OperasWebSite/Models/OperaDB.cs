@@ -9,5 +9,6 @@ namespace OperasWebSite.Models
     public class OperaDB : DbContext
     {
         public DbSet<Opera> Operas { get; set; }
+        public DbSet<Review> Reviews { get; set; }
     }
 }

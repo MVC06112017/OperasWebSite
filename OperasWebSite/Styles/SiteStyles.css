@@ -1,0 +1,33 @@
+﻿body {
+    font-family: Verdana, Sans-serif;
+}
+
+#menu li, #menu li ul {
+    display: inline;
+    padding-left: 0px;
+}
+
+#menu li {
+    width: 33.3%;
+}
+
+    #menu li a {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        display: inline-block;
+        transition: 0.5s ease all;
+
+    }
+
+        #menu li a:visited {
+            text-decoration: none;
+            background-color: black;
+            color: white;
+        }
+
+#menu li a:hover {
+    background-color: yellow;
+    color: blue;
+}
+
