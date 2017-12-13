@@ -43,5 +43,10 @@ namespace OperasWebSite.Controllers
             return View("Index");
         }
 
+        public ActionResult Chat()
+        {
+            return View("Chat");
+        }
+
     }
 }
