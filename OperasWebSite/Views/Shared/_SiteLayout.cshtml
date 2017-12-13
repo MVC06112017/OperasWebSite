@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
     <link href="~/Styles/SiteStyles.css" rel="stylesheet" />
 </head>
-<body>
+<body style="@Html.Action("GetBackground", "Home")">
 <div>
     Menu: @Html.MvcSiteMap().Menu(false, false, true)
     Breadcrumb: @Html.MvcSiteMap().SiteMapPath()

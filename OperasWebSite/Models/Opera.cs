@@ -18,7 +18,14 @@ namespace OperasWebSite.Models
         [CheckValidYear]
         public int Year { get; set; }
 
-        public string Composer { get; set; }
+        private string _composer;
+
+        public string Composer
+        {
+            get => _composer;
+            set => _composer = value;
+        }
+
     }
 
     [AttributeUsage(AttributeTargets.Property)]

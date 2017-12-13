@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using OperasWebSite.Models;
+using System.Web.Http;
+using System.Web.Routing;
 
 namespace OperasWebSite
 {
@@ -13,6 +15,7 @@ namespace OperasWebSite
     {
         protected void Application_Start()
         {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
 #if(DEBUG)
             Database.SetInitializer(new OperaInitializer());
 #endif
